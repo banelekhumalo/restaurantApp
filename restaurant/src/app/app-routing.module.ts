@@ -36,6 +36,22 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'signupr',
+    loadChildren: () => import('./signupr/signupr.module').then( m => m.SignuprPageModule)
+  },
+  {
+    path: 'loginr',
+    loadChildren: () => import('./loginr/loginr.module').then( m => m.LoginrPageModule)
+  },
+  {
+    path: 'search',
+    loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
   }
 ];
 

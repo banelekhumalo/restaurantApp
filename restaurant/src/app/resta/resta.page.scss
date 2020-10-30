@@ -1,0 +1,38 @@
+ion-content.background{
+    --background:#53bdc4;
+    }
+    .content{
+        position: fixed;
+        margin-top: 40px;
+        margin-left: 40px;
+    }
+    .button-action{
+        margin-left: 5px;
+    }
+    .signup-text{
+        font-size: x-small;
+        color: white;
+        text-align: center;
+        font-family: 'Nunito',sans-serif;
+        text-transform: none;
+    }
+    .signin-text{
+        font-size: x-small;
+        color: white;
+        text-align: center;
+        font-family: 'Nunito',sans-serif;
+        text-transform: none;
+    }
+    ion-checkbox{
+        background: #53bdc4;
+        border-radius: 5px;
+        --height:10px;
+        --width:10px;
+        --checkmark-color:white;
+        --border-color:#53bdc4;
+    }
+    .line{
+        border-bottom: 1px solid grey;
+        margin-bottom: 16px;
+    }
+    

@@ -93,5 +93,8 @@ export class SignupPage implements OnInit {
       });
       toast.present();
     }//end of toast
+    goToNextPage2() {
+      this.router.navigateByUrl('/signup');
+    }
 
 }

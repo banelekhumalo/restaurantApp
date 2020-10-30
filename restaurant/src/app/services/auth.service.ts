@@ -55,10 +55,34 @@ export class AuthService
        }
      })
    } // end  of login
+
+
+   async loginr(email, pass)
+   {
+     const loading = await this.loadCtrl.create({
+       message:'Authenticating..',
+       spinner:'crescent',
+       showBackdrop: true
+     });
+     loading.present();
+     this.afauth.signInWithEmailAndPassword(email,pass).then((data)=>{
+       if(!data.user.emailVerified)
+       {
+         loading.dismiss();
+         this.toast('Please verify your email','danger');
+          this.logout();
+       }else {
+         loading.dismiss();
+         this.router.navigate(['/loginr']);
+       }
+     })
+   } // end  of login
+
+
    logout()
    {
         this.afauth.signOut().then(()=>{
-        this.router.navigate(['/signup']);
+        this.router.navigate(['/home']);
     });
    }
    

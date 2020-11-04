@@ -52,6 +52,38 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },
+  {
+    path: 'datafromuser',
+    loadChildren: () => import('./datafromuser/datafromuser.module').then( m => m.DatafromuserPageModule)
+  },
+  {
+    path: 'restamenu',
+    loadChildren: () => import('./restamenu/restamenu.module').then( m => m.RestamenuPageModule)
+  },
+  {
+    path: 'restprofile',
+    loadChildren: () => import('./restprofile/restprofile.module').then( m => m.RestprofilePageModule)
+  },
+  {
+    path: 'appointments',
+    loadChildren: () => import('./appointments/appointments.module').then( m => m.AppointmentsPageModule)
+  },
+  {
+    path: 'appointments-modal',
+    loadChildren: () => import('./appointments-modal/appointments-modal.module').then( m => m.AppointmentsModalPageModule)
+  },
+  {
+    path: 'resta-profile',
+    loadChildren: () => import('./resta-profile/resta-profile.module').then( m => m.RestaProfilePageModule)
+  },
+  {
+    path: 'resta-profile',
+    loadChildren: () => import('./resta-profile/resta-profile.module').then( m => m.RestaProfilePageModule)
+  },
+  {
+    path: 'restasettings',
+    loadChildren: () => import('./restasettings/restasettings.module').then( m => m.RestasettingsPageModule)
   }
 ];
 

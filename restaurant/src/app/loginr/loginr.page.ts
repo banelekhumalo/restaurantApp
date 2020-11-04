@@ -19,6 +19,21 @@ export class LoginrPage implements OnInit {
 
   ngOnInit() {
   }
+  goToNextPage2() {
+    this.router.navigateByUrl('/restamenu');
+  }
+  goToNextPage() {
+    this.router.navigateByUrl('/resta-profile');
+  }
+  goToNextPage1() {
+    this.router.navigateByUrl('/datafromuser');
+  }
+  goToNextPage3() {
+    this.router.navigateByUrl('/appointments');
+  }
+  goToNextPage4() {
+    this.router.navigateByUrl('/loginr');
+  }
   logout(){
     this.afauth.signOut().then(()=>{
       this.router.navigate(['./home']);

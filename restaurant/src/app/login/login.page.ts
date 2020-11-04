@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
 import { BookmodalComponent } from '../components/bookmodal/bookmodal.component';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -25,7 +26,7 @@ export class LoginPage implements OnInit {
     public alertController: AlertController,
     private modalCtrl: ModalController
   ) {
-
+     
     
    }
 

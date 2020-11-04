@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { LoadingController, ToastController } from '@ionic/angular';
 import { AuthService } from '../services/auth.service';
@@ -12,14 +14,22 @@ export class RestaPage implements OnInit {
   email: string;
   password: string;
 
+  employee:string;
+  date: Date;
+  noOfEmployees: number;
+  noOfTables: number;
+
   constructor
   (
     private router: Router,
     private auth: AuthService,
     private toastr: ToastController,
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
+     private afs: AngularFirestore,
+     private afauth: AngularFireAuth
     
   ) { }
+  
 
   ngOnInit() {
   }
@@ -31,6 +41,7 @@ export class RestaPage implements OnInit {
     {
       this.router.navigate(['/forget-password']);
     }
+
     async loginr(){
       if(this.email && this.password)
       {
@@ -41,7 +52,7 @@ export class RestaPage implements OnInit {
         });
         loading.present();
 
-        this.auth.login(this.email, this.password).then(()=>{
+        this.auth.loginr(this.email, this.password).then(()=>{
        
           loading.dismiss();
         })
@@ -67,6 +78,9 @@ export class RestaPage implements OnInit {
       goToNextPage2() {
         this.router.navigateByUrl('/signupr');
       }
+
+
+  
 
 
 }

@@ -14,7 +14,7 @@
     <ion-grid>
       <ion-row>
         <ion-col col-6>
-          <ion-card text-center padding color="danger">
+          <ion-card text-center padding color="danger"  (click)="goToNextPage()">
             <ion-icon name="person"></ion-icon>
             <h2>Profile</h2>
           </ion-card>
@@ -34,21 +34,21 @@
           </ion-card>
         </ion-col>
         <ion-col col-6>
-          <ion-card text-center padding color="danger">
-            <ion-icon name="list"></ion-icon>
-            <h2>Tasks</h2>
+          <ion-card text-center padding color="danger" (click)="goToNextPage()">
+            <ion-icon name="analytics-outline"></ion-icon>
+            <h2>Data</h2>
           </ion-card>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col col-6>
-          <ion-card text-center padding color="danger">
+          <ion-card text-center padding color="danger" (click)="goToNextPage3()">
             <ion-icon name="calendar"></ion-icon>
             <h2>Appointment</h2>
           </ion-card>
         </ion-col>
         <ion-col col-6>
-          <ion-card text-center padding color="danger">
+          <ion-card text-center padding color="danger"  (click)="goToNextPage2()">
             <ion-icon name="grid-outline"></ion-icon>
             <h2>Main menu</h2>
           </ion-card>

@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { LoadingController, ToastController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-restasettings',
-  templateUrl: './restasettings.page.html',
-  styleUrls: ['./restasettings.page.scss'],
+  selector: 'app-settings',
+  templateUrl: './settings.page.html',
+  styleUrls: ['./settings.page.scss'],
 })
-export class RestasettingsPage implements OnInit {
+export class SettingsPage implements OnInit {
   email: string;
   constructor(
     private afauth: AngularFireAuth,
@@ -33,7 +33,7 @@ export class RestasettingsPage implements OnInit {
       this.afauth.sendPasswordResetEmail(this.email).then(()=>{
         loading.dismiss();
         this.toast('successful, please check your emails','success');
-        this.router.navigate(['/user']);
+        this.router.navigate(['/home']);
       })
       .catch((error)=>{
         this.toast(error.message,'danger')
@@ -54,5 +54,10 @@ export class RestasettingsPage implements OnInit {
        });
          toast.present();
       }//end of toast
+      logout(){
+        this.afauth.signOut().then(()=>{
+          this.router.navigate(['./home']);
+        })
+      }
 
 }

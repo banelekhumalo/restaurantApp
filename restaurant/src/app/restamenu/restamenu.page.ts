@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, DocumentReference } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
-import { AlertController, ModalController } from '@ionic/angular';
+import { AlertController, ModalController, NavController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { min } from 'rxjs/operators';
-import { DatafilesService } from '../services/datafiles.service';
+import * as firebase from 'firebase';
+import{ AngularFireModule } from 'angularfire2';
+//import { AngularFireDatabase } from 'angularfire2/database'
 
 @Component({
   selector: 'app-restamenu',
@@ -14,9 +16,20 @@ import { DatafilesService } from '../services/datafiles.service';
 export class RestamenuPage implements OnInit {
  
   employee: string ="";
-  noOftables: number;
+  noOfTables: number;
   noOfEmployees: number;
   date: Date;
+
+  menuUpdate ={
+    employee: "",
+    noOfTables:'',
+    noOfEmployees:'',
+    date : Date
+
+  }
+  Items: any;
+
+  //db = firebase.default.firestore();
 
   constructor
   (
@@ -25,9 +38,34 @@ export class RestamenuPage implements OnInit {
     public alertController: AlertController,
     private modalCtrl: ModalController,
     private afs:AngularFirestore,
-    public datafiles: DatafilesService
+    public navCtrl: NavController
+   // ,private db: AngularFireDatabase
+
+
+  ) { 
+   // this.Items = this.db.list('menuUpdate');
+  }
+
+  // add(menuUpdate){
+  //   firebase.default.database().ref('menuUpdate').push(menuUpdate);
+  // }
     
-  ) { }
+
+    //  storeData()
+    // {
+    //   this.db.collection('menuUpdate').doc().set({
+    //     employee:'employee',
+    //     noOfTables: 'noOfTables',
+    //     noOfEmployees: 'noOfEmployees',
+    //     date: 'date'
+    //   })
+    //   .then(()=>{
+    //     console.log("Document successfully written");
+    //   }).catch(()=>{
+    //     console.error("Error written the document");
+    //   });
+    // }
+  
 
   ngOnInit() {
   }
@@ -71,6 +109,7 @@ export class RestamenuPage implements OnInit {
           text: 'Ok',
           handler: ()=>{
             console.log('Confirm Ok');
+            
           }
         }
       ]
@@ -78,7 +117,8 @@ export class RestamenuPage implements OnInit {
     await alert.present();
     let result = await alert.onDidDismiss();
    console.log(result.data.values);
-        
+  
     }
+
 
 }

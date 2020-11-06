@@ -84,6 +84,14 @@ const routes: Routes = [
   {
     path: 'restasettings',
     loadChildren: () => import('./restasettings/restasettings.module').then( m => m.RestasettingsPageModule)
+  },
+  {
+    path: 'group',
+    loadChildren: () => import('./group/group.module').then( m => m.GroupPageModule)
+  },
+  {
+    path: 'settings',
+    loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
   }
 ];
 

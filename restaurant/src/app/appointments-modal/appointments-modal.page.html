@@ -23,14 +23,14 @@
     <ion-input type="text" [(ngModel)]="event.desc"></ion-input>
   </ion-item>
 
- 
   <calendar
-  *ngIf= modalReady()
-[calendarMode]="calendar.mode"
-[currentDate]="calendar.currentDate"
-(onTitleChanged)="onViewTitleChanged($event)"
-(onTimeSelected)="onTimeSelected($event)"
-lockSwipes ="true"
-></calendar>
+    *ngIf="modalReady"
+    [calendar]="calendar.mode"
+    [currentDate]="calendar.currentDate"
+    (onTitleChanged)="onViewTitleChanged($event)"
+    (onTimeSelected)="onTimeSelected"
+    lockswipes="true">
+  </calendar>
+ 
 
 </ion-content>

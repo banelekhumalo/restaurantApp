@@ -34,6 +34,12 @@ export class LoginrPage implements OnInit {
   goToNextPage4() {
     this.router.navigateByUrl('/loginr');
   }
+  goToNextPage5() {
+    this.router.navigateByUrl('/group');
+  }
+  goToNextPage6() {
+    this.router.navigateByUrl('/settings');
+  }
   logout(){
     this.afauth.signOut().then(()=>{
       this.router.navigate(['./home']);

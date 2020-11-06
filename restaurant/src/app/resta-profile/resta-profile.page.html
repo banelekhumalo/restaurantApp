@@ -9,5 +9,51 @@
 
 
 <ion-content>
+  <br><br>
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+              <label>File Uploads</label>
+                <input type="file" (change)="fileuploads($event)" multiple class="form-control" style="height: 100%;" accept="image/*">
+            </div><br>
+            <!-- <div class="form-group">
+              <button type="button" class="btn btn-success" (click)="save()">Submit</button><br><br>
+            </div> -->
+        </div>
+    </div>
+  
+      <h4><p>Profile&nbsp;<ion-icon name="people-outline"></ion-icon></p></h4>
+      <table class="table table-bordered">
+        <thead class="thead-dark">
+          <th>Image</th>
+          <br>
+          
+        </thead>
+          <ion-card>
+            <tbody>
+              <tr *ngFor="let image of images">
+                <td><img [src] = "image.url" style="height: 50%; width: 80%; border-radius: 50%; "></td>
+                <br>
+                <td><a href="javascript:void(0)" (click)="deleteImage(image)">
+                  <ion-icon name="trash-outline"></ion-icon>
+                </a></td>
+              </tr>
+            </tbody>
+            <!-- <div style="background: #a2cf58; width: 80%; height: 40%;">
+                <a href="#">about...</a><br>
+                <a href="#">contact...</a><br>
+                <a href="#">music...</a><br>
+                <a href="#">followers...</a> <br>
+                <a href="#">Life events...</a><br>
+            </div> -->
+          </ion-card>
+
+      </table>
+  </div>
+
+
+
+
 
 </ion-content>

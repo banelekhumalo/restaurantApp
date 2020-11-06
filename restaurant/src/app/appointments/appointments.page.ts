@@ -95,7 +95,7 @@ export class AppointmentsPage implements OnInit {
 
     async openAppModal(){
       const modal = await this.modalCtrl.create({
-        component:AppointmentsModalPage,
+        component: AppointmentsModalPage,
         cssClass:'appointments-modal',
         backdropDismiss: false
       });
@@ -103,8 +103,7 @@ export class AppointmentsPage implements OnInit {
       await modal.present();
 
       modal.onDidDismiss().then((result)=>{
-        if(result.data && result.data.event)
-        {
+        if(result.data && result.data.event) {
           let event = result.data.event;
           if (event.allDay)
           { 
@@ -115,7 +114,7 @@ export class AppointmentsPage implements OnInit {
                 start.getUTCMonth(),
                 start.getUTCDate()
               )
-              );
+            );
               event.endTime = new Date(
                 Date.UTC(
                   start.getUTCFullYear(),
@@ -130,5 +129,6 @@ export class AppointmentsPage implements OnInit {
         }
       });
     }
+  
 
 }

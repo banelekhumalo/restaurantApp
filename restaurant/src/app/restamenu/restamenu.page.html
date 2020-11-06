@@ -13,5 +13,48 @@
 </ion-header>
 
 <ion-content>
+<p>Please press the add icon to perform the function</p>
 
+<!-- <ion-list>
+  <ion-item>
+    <ion-label>Name of Employee in charge</ion-label>
+    <ion-input type="text" [(ngModel)]="menuUpdate.employee"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Number of Employees</ion-label>
+    <ion-input type="number" [(ngModel)]="menuUpdate.noOfEmployees"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>On which date</ion-label>
+    <ion-input type="date" [(ngModel)]="menuUpdate.date"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Number of tables</ion-label>
+    <ion-input type="number" [(ngModel)]="menuUpdate.noOfTables"></ion-input>
+  </ion-item>
+  <ion-button shape="round" (click)="add(menuUpdate)">update</ion-button>
+</ion-list>
+
+
+<ion-list>
+  <ion-item *ngFor="let item of Items | async">
+    <p>Name of Employee responsible: {{item.employee | json}}</p><br>
+    <p>Number of Employee: {{item.noOfEmployees | json}}</p><br>
+    <p>Number of Tables: {{item.noOfTables | json}}</p><br>
+    <p>Date: {{item.date}}</p><br>
+  </ion-item>
+</ion-list> -->
+
+
+
+
+
+<!-- <ion-item>
+	<ion-label>Enter Data</ion-label>
+          <ion-input [(ngModel)]="dataToAdd"></ion-input>
+</ion-item>
+<button ion-button (click)="addData()">Add Data</button>
+<ion-item *ngFor ="let item of items">
+	{{item}}
+</ion-item> -->
 </ion-content>

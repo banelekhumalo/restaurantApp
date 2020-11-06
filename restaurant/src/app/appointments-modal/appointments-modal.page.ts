@@ -23,9 +23,30 @@ export class AppointmentsModalPage implements OnInit {
   };
 
   modalReady = false;
+
   constructor(private modalCtrl: ModalController) { }
 
   ngOnInit() {
+      setTimeout(() => {
+        this.modalReady = true;
+      },0);
+  }
+
+  save(){
+    this.modalCtrl.dismiss({event: this.event})
+  }
+  onViewTitleChanged(title)
+  {
+    this.viewTitle = title;
+  }
+  onTimeSelected(ev)
+  {
+    console.log('ev: ', ev);
+    
+    this.event.startTime = new Date(ev.selectedTime);
+  }
+  close(){
+    this.modalCtrl.dismiss();
   }
   async closeModal()
   {

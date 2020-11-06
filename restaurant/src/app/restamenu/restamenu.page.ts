@@ -46,25 +46,7 @@ export class RestamenuPage implements OnInit {
    // this.Items = this.db.list('menuUpdate');
   }
 
-  // add(menuUpdate){
-  //   firebase.default.database().ref('menuUpdate').push(menuUpdate);
-  // }
-    
-
-    //  storeData()
-    // {
-    //   this.db.collection('menuUpdate').doc().set({
-    //     employee:'employee',
-    //     noOfTables: 'noOfTables',
-    //     noOfEmployees: 'noOfEmployees',
-    //     date: 'date'
-    //   })
-    //   .then(()=>{
-    //     console.log("Document successfully written");
-    //   }).catch(()=>{
-    //     console.error("Error written the document");
-    //   });
-    // }
+  
   
 
   ngOnInit() {

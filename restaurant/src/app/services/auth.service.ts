@@ -32,7 +32,7 @@ export class AuthService
               return of(null);
             }
           })
-      )
+     )
    }//end of constructor
 
    async login(email, pass)

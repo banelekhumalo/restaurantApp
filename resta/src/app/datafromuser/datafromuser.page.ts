@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,15 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./datafromuser.page.scss'],
 })
 export class DatafromuserPage implements OnInit {
+  page = 0;
+  resultsCount =10;
+  totalPages = 10;
 
   data = [];
-
-  constructor(private http: HttpClient) { 
-    
-  }
+  constructor() { }
 
   ngOnInit() {
   }
-
 
 }

@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Restaurant Profile</ion-title>
+    <ion-button color="dark" href="./loginr">
+      <ion-icon  name="close" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <br><br>
+  <ion-item>
+    <ion-label>Name:</ion-label>
+    <ion-input type="text" [(ngModel)]="userInput"></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-label>Last Name:</ion-label>
+    <ion-input type="text" [(ngModel)]="userInput2"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Phone number</ion-label>
+      <ion-input type="number" [(ngModel)]="userInput3"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Location:</ion-label>
+        <ion-input type="text" [(ngModel)]="userInput4"></ion-input>
+      </ion-item>
+  <br>
+  <div class="container-fluid" style="margin-left: 6%;">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+              <label>File Uploads</label>
+                <input type="file" (change)="fileuploads($event)" multiple class="form-control" style="height: 100%;" accept="image/*">
+            </div><br>
+            <!-- <div class="form-group">
+              <button type="button" class="btn btn-success" (click)="save()">Submit</button><br><br>
+            </div> -->
+        </div>
+        <ion-button (click)="save()" color="dark" shape="round"><ion-icon name="save-outline" style="width: 25px;height: 25px;" ></ion-icon></ion-button>
+    </div>
+  
+      <h4><p>Profile&nbsp;<ion-icon name="people-outline"></ion-icon></p></h4>
+      <table class="table table-bordered">
+        <thead class="thead-dark">
+          <th>Image</th>
+          <br>
+          
+        </thead>
+          <ion-card colour="clear">
+            <tbody>
+              <tr *ngFor="let image of images">
+                <td><img [src] = "image.url" style="height: 50%; width: 80%; border-radius: 50%; "></td>
+                <br>
+                <td><a href="javascript:void(0)" (click)="deleteImage(image)">
+                  <ion-icon name="trash-outline"></ion-icon>
+                </a></td>
+              </tr>
+             
+                
+                  <ion-input type="text" [(ngModel)]="userInput"></ion-input> <br> 
+                  <ion-input type="text" [(ngModel)]="userInput2"></ion-input><br>
+                  <ion-input type="text" [(ngModel)]="userInput3"></ion-input><br>
+                  <ion-input type="text" [(ngModel)]="userInput4"></ion-input><br>
+
+
+
+               
+                
+            </tbody>
+            <!-- <div style="background: #a2cf58; width: 80%; height: 40%;">
+                <a href="#">about...</a><br>
+                <a href="#">contact...</a><br>
+                <a href="#">music...</a><br>
+                <a href="#">followers...</a> <br>
+                <a href="#">Life events...</a><br>
+            </div> -->
+          </ion-card>
+
+      </table>
+  </div>
+
+
+
+
+
+</ion-content>

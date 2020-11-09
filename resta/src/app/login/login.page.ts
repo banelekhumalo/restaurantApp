@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
 
@@ -13,7 +14,8 @@ export class LoginPage implements OnInit {
   constructor(
     private router: Router,
     public alertController: AlertController,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private afauth: AngularFireAuth
   ) { }
 
   ngOnInit() {
@@ -70,11 +72,11 @@ export class LoginPage implements OnInit {
     _ionChange(event){
       console.log(event.detail.value)
     }
-    // logout(){
-    //   this.afauth.signOut().then(()=>{
-    //     this.router.navigate(['./home']);
-    //   })
-    // }
+    logout(){
+      this.afauth.signOut().then(()=>{
+        this.router.navigate(['./home']);
+      })
+    }
    
 
 }

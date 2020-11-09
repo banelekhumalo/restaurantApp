@@ -1,5 +1,7 @@
 {
   "name": "resta",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

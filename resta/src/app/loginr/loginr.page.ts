@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,7 +9,9 @@ import { Router } from '@angular/router';
 })
 export class LoginrPage implements OnInit {
 
-  constructor( private router: Router) { }
+  constructor( private router: Router,
+    private afauth: AngularFireAuth
+    ) { }
 
   ngOnInit() {
   }
@@ -33,10 +36,10 @@ export class LoginrPage implements OnInit {
   goToNextPage6() {
     this.router.navigateByUrl('/restasetings');
   }
-  // logout(){
-  //   this.afauth.signOut().then(()=>{
-  //     this.router.navigate(['./home']);
-  //   })
-  //}
+  logout(){
+    this.afauth.signOut().then(()=>{
+      this.router.navigate(['./home']);
+    })
+  }
 
 }

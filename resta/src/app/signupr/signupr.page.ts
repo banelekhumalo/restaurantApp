@@ -17,7 +17,8 @@ export class SignuprPage implements OnInit {
   password: string;
   cpassword :string;
   passwordMatch: boolean;
-  constructor(public afAuth: AngularFireAuth, private router: Router) { }
+  constructor(public afAuth: AngularFireAuth,
+     private router: Router) { }
   
   ngOnInit() {
   }
@@ -28,12 +29,13 @@ export class SignuprPage implements OnInit {
     if(password !== cpassword)
     {
       return console.error("Password do not match");
-      this.router.navigate(['/loginr']);
+   
     }
     try
     {
      const res = await this.afAuth.createUserWithEmailAndPassword(email, password )
-     console.log(res)
+     console.log(res);
+     this.router.navigate(['./loginr']);
         
 
     }catch(error)

@@ -9,9 +9,9 @@
     <ion-button fill="clear" color="dark" size="small" (click)="goToNextPage2()" routerDirection='root'>
      <img href="/home" src="./assets/logo.png" style="width:50px; height: 50px;">
     </ion-button>
-   
   </div>
-  <div class="ion-padding">
+
+  <!-- <div class="ion-padding">
     <ion-list>
       <ion-item>
         <ion-label position="floating">Name</ion-label>
@@ -49,8 +49,91 @@
       
     </ion-list>
     
+  </div> -->
+  <div>
+
+
+    <form [formGroup]="userForm" (ngSubmit)="submit()">
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating">Name</ion-label>
+            <ion-input  inputmode="text" formControlName="name"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.name">
+            <ng-container *ngIf="name.hasError(error.type) && (name.dirty || name.touched)">
+                <small class="error-message">{{error.message}}</small>
+            </ng-container>
+        </div>
+          <ion-item>
+            <ion-label position="floating">Last Name</ion-label>
+            <ion-input  inputmode="text" formControlName="lname"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.lname">
+            <ng-container *ngIf="lname.hasError(error.type) && (lname.dirty || lname.touched)">
+                <small class="error-message">{{error.message}}</small>
+            </ng-container>
+        </div>
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input  inputmode="email" formControlName="email"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.email">
+            <ng-container *ngIf="email.hasError(error.type) && (email.dirty || email.touched)">
+                <small class="error-message">{{error.message}}</small>
+            </ng-container>
+        </div>
+         <ion-item>
+          <ion-label  position="floating">Gender</ion-label>
+          <ion-select inputmode="text" formControlName="gender" placeholder="choose one">
+            <ion-select-option value="f">Female</ion-select-option>
+            <ion-select-option value="m">Male</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <div *ngFor="let error of errorMessages.gender">
+          <ng-container *ngIf="gender.hasError(error.type) && (gender.dirty || gender.touched)">
+              <small class="error-message">{{error.message}}</small>
+          </ng-container>
+         </div>
+             <ion-item>
+              <ion-label position="floating">Cellphone</ion-label>
+              <ion-input  inputmode="number" formControlName="cellphone"></ion-input>
+            </ion-item>
+            <div *ngFor="let error of errorMessages.cellphone">
+              <ng-container *ngIf="cellphone.hasError(error.type) && (cellphone.dirty || cellphone.touched)">
+                  <small class="error-message">{{error.message}}</small>
+              </ng-container>
+          </div>
+        <ion-item class="roundedInput">
+          <ion-label position="floating">Password:</ion-label>
+          <ion-input inputmode="password" formControlName="password" [type]="showpassword ? 'text' : 'password'">
+          </ion-input>
+         
+      </ion-item>
+      <div *ngFor="let error of errorMessages.password">
+          <ng-container *ngIf="password.hasError(error.type) && (password.dirty || password.touched)">
+              <small class="error-message">{{error.message}}</small>
+          </ng-container>
+      </div>
+          <ion-item>
+            <ion-label position="floating">Confirm Password</ion-label>
+            <ion-input inputmode="password" formControlName="cpassword" [type]="showpassword ? 'text' : 'password'"></ion-input>
+            <!-- <ion-text *ngIf="password &&!passwordMatch" color="danger">Password do not match</ion-text>
+            <ion-text *ngIf="password &&passwordMatch" color="success">Password  match</ion-text> -->
+          </ion-item>
+          <div *ngFor="let error of errorMessages.cpassword">
+            <ng-container *ngIf="cpassword.hasError(error.type) && (cpassword.dirty || cpassword.touched)">
+                <small class="error-message">{{error.message}}</small>
+            </ng-container>
+        </div>
+          
+        </ion-list>
+        <br><br>
+        <ion-button shape="round" [disabled]="!userForm.valid" type="submit" style="width: 80%; margin-left:10%">Register</ion-button>
+    </form>
+  
   </div>
-  <ion-button fill="clear" expand="block" (click)="register()">Register</ion-button>
+    
+  <!-- <ion-button fill="clear" expand="block" (click)="register()">Register</ion-button> -->
 
   <ion-button fill="clear" href="./user"style="font-size: 10px;padding-bottom:20px; color:black; margin-right: 10px;
   text-transform: none; font-family: 'Nunito',sans-serif;">Already have an account?</ion-button>

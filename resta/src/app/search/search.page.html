@@ -5,15 +5,90 @@
 </ion-header>
 
 <ion-content>
+    <!-- beginning of search -->
   <ion-button #search color="dark" href="./login"><ion-icon name="caret-back-outline"></ion-icon></ion-button>
+  <ion-badge color="dark"  style="width: 50px;height:45px;margin-top:3px;" *ngIf="cart.length > 0">
+    <ion-icon name="fast-food-outline" style="width: 30px;height:30px">
+    </ion-icon></ion-badge>
+
+
+  <!-- {{ cart.length }} > -->
   <ion-searchbar
   debounce="500"
    (ionChange)="_ionChange($event)"
   ></ion-searchbar>
 
-  <ion-list>
-    <ion-item *ngFor ="let item of searchedItem">
-      <ion-label>{{item.title}}</ion-label>
-    </ion-item>
-  </ion-list>
+
+    <!-- slider -->
+   
+    <div *ngFor="let cat of items " class="category-block">
+      <ion-row no-padding class="category-banner">
+        <ion-col text-left button tappable (click)="cat.expanded = !cat.expanded" align-self-center>
+          {{ cat.category }}
+        </ion-col>
+      </ion-row>
+
+      <ion-slides [options]="sliderConfig">
+        <ion-slide *ngFor="let product of cat.products">
+         <div *ngIf="cat.expanded">
+          <ion-card>
+            <ion-card-title>
+              {{product.resname}}
+              <br>
+              <h4>{{product.location}}</h4>
+            </ion-card-title>
+            <ion-card-content>
+             <img src="{{product.image}}" style="width: 100%; height:200px;"><br>
+             ratings:{{product.ratings}} <br>
+             <ion-button  style="--background:#53bdc4;" expand="full" href="./cart" >Reserve a table</ion-button>
+            </ion-card-content>
+          </ion-card>
+         </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+
+
+  
+
+<ion-grid>
+  <ion-row>
+    <ion-col size="12" *ngFor= "let p of restaurants" >
+      <ion-card>
+        <img src="{{p?.Profilepic}}">
+        <ion-card-title>
+          <h2><ion-icon name="home-outline"></ion-icon> {{p?.restaname}}</h2>
+          <h4><ion-icon name="pin"></ion-icon>&nbsp;&nbsp;{{p?.location}}</h4>
+        </ion-card-title>
+        <ion-card-content>
+         <p>Mail us: <ion-icon name="mail-unread-outline">&nbsp;{{p?.email}}</ion-icon></p>
+         <ion-button style="--background:#53bdc4;" expand="full" [routerLink]="'/cart/' + p?.ownerId" >Reserve a table</ion-button>
+         <!-- href="./cart" -->
+        </ion-card-content>
+      </ion-card>
+
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+<!-- restaname: 
+Profilepic: 
+location:this.
+email:
+regNo: -->
+
+
+
+
+<!-- <ion-infinite-scroll threshold (ionInfinite)="loadData($event)">
+
+</ion-infinite-scroll> -->
+
+
+
+
+<!-- <ion-button [routerLink]="'/booking-a-table/'+restaurants?.ownerId">Book a table</ion-button> -->
+
+
 </ion-content>

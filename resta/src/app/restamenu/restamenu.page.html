@@ -12,49 +12,56 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-<p>Please press the add icon to perform the function</p>
-
-<!-- <ion-list>
-  <ion-item>
-    <ion-label>Name of Employee in charge</ion-label>
-    <ion-input type="text" [(ngModel)]="menuUpdate.employee"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Number of Employees</ion-label>
-    <ion-input type="number" [(ngModel)]="menuUpdate.noOfEmployees"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>On which date</ion-label>
-    <ion-input type="date" [(ngModel)]="menuUpdate.date"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Number of tables</ion-label>
-    <ion-input type="number" [(ngModel)]="menuUpdate.noOfTables"></ion-input>
-  </ion-item>
-  <ion-button shape="round" (click)="add(menuUpdate)">update</ion-button>
-</ion-list>
+<ion-content style="--background:#53bec5;">
+<p style="margin-left: 5px;">Please press the add icon to update staff details</p>
+<br>
+<div class="row" style="margin-left: 5px;">
+  <div class="col-md-12">
+      <div class="form-group">
+        <label>File Uploads</label>
+          <input type="file" (change)="fileuploads($event)" multiple class="form-control" style="height: 100%;" accept="image/*">
+      </div>
+  </div>
+  <ion-button (click)="save()" color="dark" shape="round">load</ion-button>
+</div>
 
 
-<ion-list>
-  <ion-item *ngFor="let item of Items | async">
-    <p>Name of Employee responsible: {{item.employee | json}}</p><br>
-    <p>Number of Employee: {{item.noOfEmployees | json}}</p><br>
-    <p>Number of Tables: {{item.noOfTables | json}}</p><br>
-    <p>Date: {{item.date}}</p><br>
-  </ion-item>
-</ion-list> -->
+<div>
+  <ion-card  *ngFor="let image of images">
+    <ion-item>
+      <ion-icon name="pin" slot="end  "></ion-icon>
+      <ion-label>{{image.name}}</ion-label>
+      <br>
+      
+        <img [src] = "image.url">
+      <br>
+    </ion-item>
+    <ion-card-content style="justify-content: center;text-align: center;font-family:cursive;color:#53bec5; font-size:larger;">
+      <ion-icon name="planet"></ion-icon>&nbsp;  K-FOOD 
 
+     
+    </ion-card-content>
+  </ion-card>
+</div>
 
 
 
 
-<!-- <ion-item>
-	<ion-label>Enter Data</ion-label>
-          <ion-input [(ngModel)]="dataToAdd"></ion-input>
-</ion-item>
-<button ion-button (click)="addData()">Add Data</button>
-<ion-item *ngFor ="let item of items">
-	{{item}}
-</ion-item> -->
+
+<!-- <table class="table table-bordered">
+ >
+  <tbody>
+    <tr *ngFor="let image of images">
+      <td><img [src] = "image.url" style="height: 30px; width: 30px; "></td>
+      <td>{{image.name}}</td>
+      <td>{{image.type}}</td>
+      <td>{{image.size}}</td>
+      <td><a href="javascript:void(0)" (click)="deleteImage(image)">delete
+        <i class="fa fa-trash"></i>
+      </a></td>
+    </tr>
+  </tbody>
+</table> -->
+
+
 </ion-content>

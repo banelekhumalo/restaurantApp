@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title text-center>Reserve your table!</ion-title>
+    <ion-button  href="./search" shape="round" color="dark" style="width: 20%;"><ion-icon name="caret-back-outline"></ion-icon></ion-button>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  
+  <form [formGroup]="tableForm" (ngSubmit)="submit()">
+    <ion-list>
+      <ion-item class="roundedInput">
+        <ion-label position="floating">Reservation Under</ion-label>
+        <ion-input autocapitalize inputmode="text" formControlName="resname"></ion-input>
+      </ion-item>
+      <div *ngFor="let error of errorMessages.resname">
+        <ng-container *ngIf="resname.hasError(error.type) && (resname.dirty || resname.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+
+      <ion-item class="roundedInput">
+        <ion-label position="floating">Number of people</ion-label>
+        <ion-input autocapitalize inputmode="number" formControlName="noOfPeople"></ion-input>
+      </ion-item>
+      <div *ngFor="let error of errorMessages.noOfPeople">
+        <ng-container *ngIf="noOfPeople.hasError(error.type) && (noOfPeople.dirty || noOfPeople.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+
+      <ion-item class="roundedInput">
+        <ion-label position="floating">Time</ion-label><br>
+        <ion-input autocapitalize inputmode="time" formControlName="time" type="time"></ion-input>
+      </ion-item>
+      <div *ngFor="let error of errorMessages.time">
+        <ng-container *ngIf="time.hasError(error.type) && (time.dirty || time.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+
+      <ion-item class="roundedInput">
+        <ion-label position="floating">Date</ion-label><br>
+        <ion-input autocapitalize inputmode="date" formControlName="date" type="date"></ion-input>
+      </ion-item>
+      <div *ngFor="let error of errorMessages.date">
+        <ng-container *ngIf="date.hasError(error.type) && (date.dirty || date.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+     </ion-list>
+
+  
+    <br><br>
+    <ion-button shape="round" [disabled]="!tableForm.valid" type="submit" style="width: 80%;margin-left:10%" color="success">Submit  </ion-button>
+    <!-- <ion-button shape="round" size="medium" type="submit" click="signout()">Log Out</ion-button> -->
+  </form>
+
+
+
+
+
+</ion-content>

@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { CalendarComponent } from 'ionic2-calendar';
+
 import { AppointmentsModalPage } from '../appointments-modal/appointments-modal.page';
+// import localeDe
 
 @Component({
   selector: 'app-appointments',
@@ -19,7 +21,8 @@ export class AppointmentsPage implements OnInit {
 
   selectedDate : Date;
 
-  @ViewChild (CalendarComponent) myCal: CalendarComponent
+  @ViewChild (CalendarComponent) myCal: CalendarComponent;
+
   constructor( private modalCtrl: ModalController) { }
 
 

@@ -63,6 +63,14 @@ const routes: Routes = [
     path: 'datafromuser',
     loadChildren: () => import('./datafromuser/datafromuser.module').then( m => m.DatafromuserPageModule)
   },
+  {
+    path: 'cart/:id',
+    loadChildren: () => import('./cart/cart.module').then( m => m.CartPageModule)
+  },
+  {
+    path: 'reg-resta',
+    loadChildren: () => import('./reg-resta/reg-resta.module').then( m => m.RegRestaPageModule)
+  },
 ];
 
 @NgModule({

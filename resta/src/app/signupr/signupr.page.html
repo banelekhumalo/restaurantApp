@@ -11,45 +11,54 @@
     </ion-button>
    
   </div>
-  <div class="ion-padding">
-    <ion-list>
-      <ion-item>
-        <ion-label position="floating">Restaurant Name</ion-label>
-        <ion-input [(ngModel)]="rname" type="text"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Registration number</ion-label>
-        <ion-input [(ngModel)]="regno" type="text"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Cell Phone</ion-label>
-        <ion-input [(ngModel)]="cellphone" type="number"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Address</ion-label>
-        <ion-input [(ngModel)]="address" type="text"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Email</ion-label>
-        <ion-input [(ngModel)]="email" type="text"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Password</ion-label>
-        <ion-input [(ngModel)]="password" type="password"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Confirm Password</ion-label>
-        <ion-input [(ngModel)]="cpassword" type="password" (ionChange)="checkPassword()"></ion-input>
-        <ion-text *ngIf="password &&!passwordMatch" color="danger">Password do not match</ion-text>
-        <ion-text *ngIf="password &&passwordMatch" color="success">Password  match</ion-text>
-      </ion-item>
-      
-    </ion-list>
-    
-  </div>
-  <ion-button [disabled]="!passwordMatch" fill="clear" expand="block" (click)="register() ">Register</ion-button>
+  <form [formGroup]="RestOwnerForm" (ngSubmit)="submit()">
+    <br><br>
+      <ion-list>
+        <br>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input  inputmode="email" formControlName="email"></ion-input>
+        </ion-item>
+        <div *ngFor="let error of errorMessages.email">
+          <ng-container *ngIf="email.hasError(error.type) && (email.dirty || email.touched)">
+              <small class="error-message">{{error.message}}</small>
+          </ng-container>
+      </div>
+  <br>
+      <ion-item class="roundedInput">
+        <ion-label position="floating">Password:</ion-label>
+        <ion-input inputmode="password" formControlName="password" [type]="showpassword ? 'text' : 'password'">
+        </ion-input>
+       
+    </ion-item>
+    <div *ngFor="let error of errorMessages.password">
+        <ng-container *ngIf="password.hasError(error.type) && (password.dirty || password.touched)">
+            <small class="error-message">{{error.message}}</small>
+        </ng-container>
+    </div>
 
-  <ion-button fill="clear" href="./resta"style="font-size: 10px;padding-bottom:20px; color:black; margin-right: 10px;
+        <!-- <ion-item>
+          <ion-label position="floating">Confirm Password</ion-label>
+          <ion-input inputmode="password" formControlName="cpassword" (ionChange)="checkPassword()"></ion-input>
+          <ion-text *ngIf="password &&!passwordMatch" color="danger">Password do not match</ion-text>
+          <ion-text *ngIf="password &&passwordMatch" color="success">Password  match</ion-text>
+        </ion-item>
+        <div *ngFor="let error of errorMessages.cpassword">
+          <ng-container *ngIf="cpassword.hasError(error.type) && (cpassword.dirty || cpassword.touched)">
+              <small class="error-message">{{error.message}}</small>
+          </ng-container>
+      </div> -->
+        
+      </ion-list>
+      <br><br>
+      <ion-button shape="round" [disabled]="!RestOwnerForm.valid" type="submit" style="width: 80%; margin-left:10%">Register</ion-button>
+  </form>
+
+ 
+<!-- 
+  <ion-button [disabled]="!passwordMatch &&!RestOwnerForm.valid" fill="clear" expand="block" (click)="register() ">Register</ion-button> -->
+<br><br>
+  <ion-button fill="clear" href="./resta"style="font-size: 12px;padding-bottom:20px; color:black; margin-right: 10px;
   text-transform: none; font-family: 'Nunito',sans-serif;">Already have an account?</ion-button>
 
 </ion-content>

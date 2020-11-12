@@ -1,4 +1,4 @@
-<ion-content class="ion-padding">
+<ion-content class="ion-padding" style="--background:#53bdc4;">
   <ion-button (click)="logout()" shape="round" color="dark" style="width: 20%;"><ion-icon name="log-out-outline"></ion-icon></ion-button>
   <ion-card>
     <ion-card-header>
@@ -9,19 +9,29 @@
       <div style="display: flex;justify-content: center;align-items: center;">
         <ion-list>
           <ion-buttons end>
-            <button ion-button (click)="presentAlertPrompt()">
+            <button color="clear" ion-button (click)="presentAlertPrompt()">
               <ion-icon name="add"></ion-icon>
             </button>
           </ion-buttons>      
-          <ion-button (click)="presentAlertPrompt()">
+          <ion-button style="--background:#53bdc4;" href="./search">
             <ion-icon name="restaurant-outline"></ion-icon>
             Book Table</ion-button>
         </ion-list>
       </div>
     </ion-card-content>
   </ion-card >
-  
-    
+    <h1 style="font-family: cursive; text-align: center;">"You do not need a silver fork to eat good food"</h1>
+  <ion-grid>
+       <ion-row>
+        <ion-col size="8" style="margin-left: 15%;">
+          <p style="font-style: oblique; font-family: cursive; color: white;">Number one rated city with best restaurants </p>
+          <img src="https://www.bikerbravado.co.za/wp-content/uploads/2018/11/joburg.jpg" style="width:100%; height:120px">
+        </ion-col>
+      </ion-row>
+      
+  </ion-grid>  
+
+
 
   <div>
     <ion-list *ngFor="let item of alert">
@@ -42,7 +52,7 @@
  
  
   <div>
-    <h4 href="./search"><a href="/search">search</a></h4>
+    <!-- <h4 href="./search"><a href="/search" style="color: white;">search</a></h4> -->
 
     <!-- <ion-searchbar
       [(ngModel)]="myInput"

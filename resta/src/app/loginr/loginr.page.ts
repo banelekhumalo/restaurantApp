@@ -41,5 +41,8 @@ export class LoginrPage implements OnInit {
       this.router.navigate(['./home']);
     })
   }
+  goToNextPage7() {
+    this.router.navigateByUrl('/reg-resta');
+     }
 
 }

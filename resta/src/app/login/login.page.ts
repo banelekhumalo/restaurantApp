@@ -2,6 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/database';
+import 'firebase/firestore';
+import { SearchService } from '../services/search.service';
+import { FormGroup, FormControl } from '@angular/forms';
+
 
 @Component({
   selector: 'app-login',
@@ -15,10 +22,12 @@ export class LoginPage implements OnInit {
     private router: Router,
     public alertController: AlertController,
     private modalCtrl: ModalController,
-    private afauth: AngularFireAuth
+    private afauth: AngularFireAuth,
+    private searchService: SearchService
   ) { }
 
   ngOnInit() {
+    this.searchService.signAuth()
   }
   async presentAlertPrompt()
   {
@@ -38,7 +47,7 @@ export class LoginPage implements OnInit {
         {
           name:'date',
           type:'date',
-          min:'2020-10-30',
+          min:'2020-11-13',
           max:'2020-12-31'
         },
         {

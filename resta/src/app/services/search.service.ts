@@ -73,4 +73,5 @@ export class SearchService {
     reserve() {
       return firebase.firestore().collection('restaurants');
     }
+    
 }

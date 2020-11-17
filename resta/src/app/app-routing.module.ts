@@ -71,6 +71,10 @@ const routes: Routes = [
     path: 'reg-resta',
     loadChildren: () => import('./reg-resta/reg-resta.module').then( m => m.RegRestaPageModule)
   },
+  {
+    path: 'forgot',
+    loadChildren: () => import('./forgot/forgot.module').then( m => m.ForgotPageModule)
+  },
 ];
 
 @NgModule({

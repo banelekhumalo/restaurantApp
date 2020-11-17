@@ -21,7 +21,7 @@
 
     <!-- slider -->
    
-    <div *ngFor="let cat of items " class="category-block">
+    <div *ngFor="let cat of items " class="category-block" style="background:#53bec5; border-bottom-right-radius: 50px;border-bottom-left-radius: 50px;">
       <ion-row no-padding class="category-banner">
         <ion-col text-left button tappable (click)="cat.expanded = !cat.expanded" align-self-center>
           {{ cat.category }}
@@ -48,10 +48,10 @@
       </ion-slides>
     </div>
 
-
+<br>
   
 
-<ion-grid>
+<ion-grid  style="background:#53bec5;border-top-left-radius: 50px;border-top-right-radius: 50px; border-bottom-left-radius: 50px;border-bottom-right-radius: 50px;">
   <ion-row>
     <ion-col size="12" *ngFor= "let p of restaurants" >
       <ion-card>

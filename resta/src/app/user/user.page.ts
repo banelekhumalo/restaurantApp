@@ -50,5 +50,8 @@ export class UserPage implements OnInit {
         this.router.navigate(['./home']);
       })
     }
+    goToNextPage5() {
+      this.router.navigateByUrl('/forgot');
+       }
 
 }

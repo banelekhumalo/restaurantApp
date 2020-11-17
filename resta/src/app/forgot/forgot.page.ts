@@ -4,52 +4,22 @@ import { Router } from '@angular/router';
 import { LoadingController, ToastController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-resta',
-  templateUrl: './resta.page.html',
-  styleUrls: ['./resta.page.scss'],
+  selector: 'app-forgot',
+  templateUrl: './forgot.page.html',
+  styleUrls: ['./forgot.page.scss'],
 })
-export class RestaPage implements OnInit {
+export class ForgotPage implements OnInit {
   email: string;
-  password: string;
-
-  employee:string;
-  date: Date;
-  noOfEmployees: number;
-  noOfTables: number;
-
-  constructor( private router: Router,
-    private afAuth: AngularFireAuth,
+  constructor
+  (
+    private afauth: AngularFireAuth,
     private toastr: ToastController,
-    private loadingCtrl:LoadingController) { }
-  async loginr()
-  {
-    const {email, password} =this
-    try{
-      const res = await this.afAuth.signInWithEmailAndPassword(email, password)
-      this.router.navigate(['/loginr']);
-    }catch(err)
-    {
-      console.dir(err)
-      if(err.code === "auth/user-not-found")
-      {
-        console.log("User not found");
-      }
-    }
-    
-  }
+    private router: Router,
+    private loadingCtrl:LoadingController
+  ) { }
 
-
-   logout(){
-     this.afAuth.signOut().then(()=>{
-       this.router.navigate(['./home']);
-     })
-   }
   ngOnInit() {
   }
-  goToNextPage2() {
-    this.router.navigateByUrl('/signupr');
-  }
-
 
   async resetPassword()
   {
@@ -62,7 +32,7 @@ export class RestaPage implements OnInit {
       });
       loading.present();
       
-      this.afAuth.sendPasswordResetEmail(this.email).then(()=>{
+      this.afauth.sendPasswordResetEmail(this.email).then(()=>{
         loading.dismiss();
         this.toast('successful, please check your emails','success');
         this.router.navigate(['/home']);
@@ -86,10 +56,9 @@ export class RestaPage implements OnInit {
        });
          toast.present();
       }//end of toast
-
-      goToNextPage5() {
-        this.router.navigateByUrl('/forgot');
-         }
-
-
+      logout(){
+        this.afauth.signOut().then(()=>{
+          this.router.navigate(['./home']);
+        })
+      }
 }

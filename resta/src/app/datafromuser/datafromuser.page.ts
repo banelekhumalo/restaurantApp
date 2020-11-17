@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IonInfiniteScroll, IonSearchbar, LoadingController, ModalController, NavController } from '@ionic/angular';
+import { AlertController, IonInfiniteScroll, IonSearchbar, LoadingController, ModalController, NavController } from '@ionic/angular';
 import firebase from 'firebase/app';
 import { SearchService } from '../services/search.service';
 import 'firebase/auth';
 import 'firebase/database';
 import 'firebase/firestore';
+
+
 
 @Component({
   selector: 'app-datafromuser',
@@ -16,7 +18,7 @@ export class DatafromuserPage implements OnInit {
   page = 0;
   resultsCount =10;
   totalPages = 10;
-
+  
   products:Array<any> =[];
   lastKey: string = null;
 
@@ -26,7 +28,7 @@ export class DatafromuserPage implements OnInit {
   reservations: Array<any> = [];
   // restaurants: any;
   id: any
-
+  disableButton;
   data = [];
   constructor(
     public nav:NavController,
@@ -34,7 +36,8 @@ export class DatafromuserPage implements OnInit {
     private modalCtrlr: ModalController,
     private router: Router,
     private activatedActivated: ActivatedRoute, 
-    private searchService: SearchService
+    private searchService: SearchService,
+    private alertCtrl: AlertController
   ) { }
 
   ngOnInit() {
@@ -53,6 +56,56 @@ export class DatafromuserPage implements OnInit {
     });
   }
   
+  async showAlert()
+  {
+    await this.alertCtrl.create({
+      header:"Process of Confirming booking",
+      subHeader:"confirmed booking",
+      message:"Are you sure about this step?",
+      inputs:[
+        {type:'password', name:'promo', placeholder:"Enter Password"}
+      ],
+      buttons:[
+        {
+          text:"Apply", handler:(res) => {
+            console.log(res.promo);
+          }
+        },
+        {
+          text:"Cancel"
+        }
+      ]
+
+    }).then(res => res.present())
+  }
+
+  
+  async declineAlert()
+  {
+    await this.alertCtrl.create({
+      header:"Process of Declining booking",
+      subHeader:"confirmed booking",
+      message:"The booking is not successful!",
+      inputs:[
+        {type:'text', name:'promo', id:"promo", placeholder:"Response text"}
+      ],
+      buttons:[
+        {
+          text:"Apply", handler:(res) => {
+            console.log(res.promo);
+          }
+        },
+        {
+          text:"Cancel"
+        }
+      ]
+
+    }).then(res => res.present())
+  }
+
+  truthClick() {
+    this.disableButton = true;
+    }
 
 
 }

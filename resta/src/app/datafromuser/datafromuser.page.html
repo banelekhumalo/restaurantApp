@@ -45,6 +45,11 @@
                     Date selected:&nbsp;&nbsp;{{p?.date}} <br>
                   Time selected:&nbsp;&nbsp;{{p?.time}} <br></p>
               </ion-item>
+              <ion-button shape="round" color="success" style="margin-left:35%"  (click)="showAlert()" (click)="truthClick()" [disabled]="disableButton">accept</ion-button>
+              <ion-button  shape="round" color="danger" style="margin-left:35%" (click)="declineAlert()">decline</ion-button>
+              <!-- <button ion-button color="secondary" (click)="truthClick()" [disabled]="disableButton">Truth</button> -->
+
+
             </ion-card>
           </ion-col>
         </ion-row>

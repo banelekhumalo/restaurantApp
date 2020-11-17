@@ -106,8 +106,6 @@ export class DatafromuserPage implements OnInit {
   truthClick() {
     this.disableButton = true;
     }
-    truthClick2() {
-      this.disableButton = false;
-      }
+   
 
 }

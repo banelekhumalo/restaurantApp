@@ -6,7 +6,7 @@ import { IonicModule } from '@ionic/angular';
 import { NgCalendarModule } from 'ionic2-calendar';
 import { AppointmentsPageRoutingModule } from './appointments-routing.module';
 
-import { AppointmentsPage } from './appointments.page';
+ import { AppointmentsPage } from './appointments.page';
 import { from } from 'rxjs';
 import localeDe from '@angular/common/locales/de'
 registerLocaleData(localeDe);

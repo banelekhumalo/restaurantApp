@@ -39,8 +39,7 @@ export class SearchService {
   signAuth(){
     return firebase.auth().onAuthStateChanged(user => {
      if(user){
-      //  const email = user.email;
-      //  this.setSession(email);
+      
        console.log('user logged in: ', user);
      }else{
        console.log('user logged out')

@@ -8,3 +8,30 @@ https://www.youtube.com/watch?v=UR_DgpjdRxk
 
 Part 3
 https://www.youtube.com/watch?v=lxaepCJKYeM&t=866s
+
+
+Part 4
+https://www.youtube.com/watch?v=OdBQXOz9D8g
+
+
+how to install firebase 
+*npm install firebase @angular/fire --save
+*npm install firebase
+*npm i @ionic-native/firebase
+
+
+to install cordova camera
+*npm install cordova@6.0.5
+
+to pull from github
+git pull origin master
+
+npm install pdfmake @ionic-native/file-opener @ionic/file
+https://www.youtube.com/watch?v=mlGehHg4oSA
+
+https://ionicacademy.com/create-pdf-files-ionic-pdfmake/
+(how to make pdf)
+
+https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete#maps_places_autocomplete-javascript
+(lonk for maps)
+API_KEY = AIzaSyDug8dO2sLm-xN-feiWEyVj5q7dm7sRgNM

@@ -35,3 +35,6 @@ https://ionicacademy.com/create-pdf-files-ionic-pdfmake/
 https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete#maps_places_autocomplete-javascript
 (lonk for maps)
 API_KEY = AIzaSyDug8dO2sLm-xN-feiWEyVj5q7dm7sRgNM
+
+how to generate qr scan and scan it after
+https://edupala.com/ionic-qr-code-scanner-and-generator/

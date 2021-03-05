@@ -43,7 +43,11 @@
                 <p> Reservation under:&nbsp;&nbsp;{{p?.resname}} <br>
                     Number of People:&nbsp;&nbsp;{{p?.noOfPeople}} <br>
                     Date selected:&nbsp;&nbsp;{{p?.date}} <br>
-                  Time selected:&nbsp;&nbsp;{{p?.time}} <br></p>
+                  Time selected:&nbsp;&nbsp;{{p?.time}} <br>
+                  Email:&nbsp;&nbsp;{{p?.resEmail}} <br>
+              
+
+                </p>
               </ion-item>
               <ion-button shape="round" color="success" style="margin-left:35%"  (click)="showAlert()" (click)="truthClick()" [disabled]="disableButton">accept</ion-button>
               <ion-button  shape="round" color="danger" style="margin-left:35%" (click)="declineAlert()" (click)="truthClick()" [disabled]="disableButton">decline</ion-button>

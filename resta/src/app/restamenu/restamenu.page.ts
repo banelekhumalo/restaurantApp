@@ -57,8 +57,8 @@ export class RestamenuPage implements OnInit {
         {
           name:'date',
           type:'date',
-          min:'2020-10-30',
-          max:'2020-12-31'
+          min:'2021-02-19',
+          max:'2021-12-31'
         }
       ], buttons: [
         {

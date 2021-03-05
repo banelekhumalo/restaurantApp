@@ -86,6 +86,10 @@ export class LoginPage implements OnInit {
         this.router.navigate(['./home']);
       })
     }
+
+    gotoProf(){
+      this.router.navigateByUrl('/user-profile')
+    }
    
 
 }

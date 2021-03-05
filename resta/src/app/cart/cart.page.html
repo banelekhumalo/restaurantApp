@@ -49,8 +49,21 @@
           <small class="error-message">{{error.message}}</small>
         </ng-container>
       </div>
-     </ion-list>
 
+      <p>Please provide an email where they can reply to</p>
+      <ion-item class="roundedInput">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input autocapitalize inputmode="email" formControlName="resEmail"></ion-input>
+      </ion-item>
+      <div *ngFor="let error of errorMessages.resEmail">
+        <ng-container *ngIf="resEmail.hasError(error.type) && (resEmail.dirty || resEmail.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+
+
+     </ion-list>
+     
   
     <br><br>
     <ion-button shape="round" [disabled]="!tableForm.valid" type="submit" style="width: 80%;margin-left:10%" color="success">Submit  </ion-button>

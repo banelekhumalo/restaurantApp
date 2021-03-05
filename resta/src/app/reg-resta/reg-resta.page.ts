@@ -33,14 +33,14 @@ export class RegRestaPage implements OnInit {
     this.addRest();
   }
   
-  eventName
-  startDate
-  startTime
-  endDate
-  endTime
-  location
-  description
-  imgUrl
+  // eventName
+  // startDate
+  // startTime
+  // endDate
+  // endTime
+  // location
+  // description
+  // imgUrl
   
   get restaname() {
     return this.restaurantForm.get("restaname");

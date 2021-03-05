@@ -1,57 +1,58 @@
-<ion-header id="header1">
-  <ion-toolbar>
-    <ion-title>User register/login</ion-title>
-  </ion-toolbar>
-</ion-header>
-<div class="logo">
-  <img style="border-radius: 50%;" src="./assets/logo.png">
-</div>
 <ion-content class="background">
-  <div class="content">
-    <div class="button-action">
-      <ion-button fill="clear" color="dark" size="small">
-        <b>
-          <p class="signin-text"><b>Login</b></p>
-        </b>
-      </ion-button>
+
+  <div class="logo" style="height: 30%; background: white; border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 900px;">
+    <img style="border-radius: 50%;margin-top: -15%;" src="./assets/logo.png">
+  </div>
+
+  <div style="border-top-left-radius: 250px;">
+    <div class="content">
       <div class="button-action">
-        <ion-button fill="clear" color="dark" size="small" routerLink="/signup" routerDirection="root">
+        <ion-button fill="clear" color="dark" size="small">
           <b>
-            <p class="signup-text">Register</p>
+            <p class="signin-text" style="font-size: large;"><b>Login</b></p>
           </b>
         </ion-button>
-      </div>
+        <div class="button-action">
+          <ion-button fill="clear" color="dark" size="small" routerLink="/signup" routerDirection="root">
+            <b>
+              <p class="signup-text" style="font-size: large;">Register</p>
+            </b>
+          </ion-button>
+        </div>
+        
+  <!--------------------------------------------------------------------------------------------------->
       
-<!--------------------------------------------------------------------------------------------------->
-    
-<div class="ion-padding">
-        <ion-input  type="text" [(ngModel)]="email" placeholder="Email" style="padding-left:10px important;font-family:'Nunito,san-serif;'"></ion-input>
-        <ion-input  type="password" [(ngModel)]="password" placeholder="Password" style="padding-left:10px important;font-family:'Nunito,san-serif;'"></ion-input>
-      </div>
-
-      <ion-button class="actionbutton" expand="full" fill="clear" (click)="login()"style="text-transform:none">Login</ion-button>
-      <ion-grid>
-      <ion-row>
-        <ion-col size="6">
-          <ion-checkbox checked style="margin-bottom: 7px; margin-left: 8px;"color="warning" > &nbsp;
-            <ion-label style="display: inline-block; vertical-align: top;font-family: 'Nunito',sans-serif;">
-              <p style="font-size: small; margin-bottom: 3px;">Stay Connected</p></ion-label>
-          </ion-checkbox>
-         </ion-col>
-              
-         <ion-col size="6">
-            <ion-button fill="clear" style="font-size:small;color: white; text-transform: none; font-family: 'Nunito',sans-serif;">
-              <p style="font-size:small; margin-bottom: 37.5px;" (click)="goToNextPage5()">Forgot Password?</p></ion-button>
-         </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col class="line" size="5"></ion-col>
-        <ion-col size="2">Or</ion-col>
-        <ion-col class="line" size="5"></ion-col>
-      </ion-row>
-      </ion-grid>
-      <ion-button class="fbbutton" fill="clear" href="/home">Facebook</ion-button>
-      <ion-button class="instabutton" fill="clear">Instagram</ion-button>
-</div>
+  <div class="ion-padding">
+          <ion-input  type="text" [(ngModel)]="email" placeholder="Email" style="padding-left:10px important;font-family:'Nunito,san-serif;'"></ion-input>
+          <ion-input  type="password" [(ngModel)]="password" placeholder="Password" style="padding-left:10px important;font-family:'Nunito,san-serif;'"></ion-input>
+        </div>
+  
+        <ion-button class="actionbutton" expand="full" fill="clear" (click)="login()"
+        style="text-transform:none; font-weight: bolder;font-size: larger;">Login</ion-button>
+        <ion-grid>
+        <ion-row>
+          <ion-col size="6">
+            <ion-checkbox checked style="margin-bottom: 7px; margin-left: 8px;"color="warning" > &nbsp;
+              <ion-label style="display: inline-block; vertical-align: top;font-family: 'Nunito',sans-serif;">
+                <p style="font-size: small; margin-bottom: 3px;">Stay Connected</p></ion-label>
+            </ion-checkbox>
+           </ion-col>
+                
+           <ion-col size="6">
+              <ion-button fill="clear" style="font-size:small;color: white; text-transform: none; font-family: 'Nunito',sans-serif;">
+                <p style="font-size:small; margin-bottom: 37.5px;" (click)="goToNextPage5()">Forgot Password?</p></ion-button>
+           </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="line" size="5"></ion-col>
+          <ion-col size="2">Or</ion-col>
+          <ion-col class="line" size="5"></ion-col>
+        </ion-row>
+        </ion-grid>
+        <ion-button class="fbbutton" fill="clear" href="/home">Facebook</ion-button>
+        <ion-button class="instabutton" fill="clear">Instagram</ion-button>
+  </div>
+    </div>
   </div>
 </ion-content>

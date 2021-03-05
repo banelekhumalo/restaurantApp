@@ -74,7 +74,15 @@ const routes: Routes = [
   {
     path: 'forgot',
     loadChildren: () => import('./forgot/forgot.module').then( m => m.ForgotPageModule)
+  },  {
+    path: 'user-profile',
+    loadChildren: () => import('./user-profile/user-profile.module').then( m => m.UserProfilePageModule)
   },
+  {
+    path: 'edituserprof',
+    loadChildren: () => import('./edituserprof/edituserprof.module').then( m => m.EdituserprofPageModule)
+  },
+
 ];
 
 @NgModule({

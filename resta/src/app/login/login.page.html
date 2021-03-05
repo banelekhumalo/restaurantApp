@@ -1,35 +1,45 @@
+
+
 <ion-content class="ion-padding" style="--background:#53bdc4;">
-  <ion-button (click)="logout()" shape="round" color="dark" style="width: 20%;"><ion-icon name="log-out-outline"></ion-icon></ion-button>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title style="text-align: center;">Book your Table</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      
-      <div style="display: flex;justify-content: center;align-items: center;">
-        <ion-list>
-          <ion-buttons end>
-            <button color="clear" ion-button (click)="presentAlertPrompt()">
-              <ion-icon name="add"></ion-icon>
-            </button>
-          </ion-buttons>      
-          <ion-button style="--background:#53bdc4;" href="./search">
-            <ion-icon name="restaurant-outline"></ion-icon>
-            Book Table</ion-button>
-        </ion-list>
-      </div>
-    </ion-card-content>
-  </ion-card >
+
+  <ion-button (click)="gotoProf()" shape="round" color="clear" style="width: 40%;">
+    <ion-icon name="person-outline"></ion-icon>&nbsp;Profile</ion-button>
+  <br><br>
+  <div style="height: 25%; width: 90%; background: white;border-bottom-right-radius: 400px;border-bottom-left-radius: 400px;">
+    <ion-card style="border-bottom-right-radius: 200px;margin-left: -1px;">
+      <ion-card-header>
+        <ion-card-title style="text-align: center;">Book your Table</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        
+        <div style="display: flex;justify-content: center;align-items: center;">
+          <ion-list>
+            <ion-buttons end>
+              <button color="clear" ion-button (click)="presentAlertPrompt()">
+                <ion-icon name="add"></ion-icon>
+              </button>
+            </ion-buttons>      
+            <ion-button style="--background:#53bdc4;" href="./search">
+              <ion-icon name="restaurant-outline"></ion-icon>
+              Book Table</ion-button>
+          </ion-list>
+        </div>
+        
+      </ion-card-content>
+    </ion-card >
+ </div>
+   
+  <div style="height:55%; width: 100%;">
     <h1 style="font-family: cursive; text-align: center;">"You do not need a silver fork to eat good food"</h1>
-  <ion-grid>
-       <ion-row>
-        <ion-col size="8" style="margin-left: 15%;">
-          <p style="font-style: oblique; font-family: cursive; color: white;">Number one rated city with best restaurants </p>
-          <img src="https://www.bikerbravado.co.za/wp-content/uploads/2018/11/joburg.jpg" style="width:100%; height:120px">
-        </ion-col>
-      </ion-row>
-      
-  </ion-grid>  
+    <ion-grid>
+         <ion-row>
+          <ion-col size="8" style="margin-left: 15%;">
+            <p style="font-style: oblique; font-family: cursive; color: white;">Number one rated city with best restaurants </p>
+            <img src="https://www.bikerbravado.co.za/wp-content/uploads/2018/11/joburg.jpg" style="width:100%; height:120px">
+          </ion-col>
+        </ion-row>
+    </ion-grid>  
+  </div>
 
 
 
@@ -49,18 +59,8 @@
       </ion-item>
     </ion-list>
   </div>
- 
- 
-  <div>
-    <!-- <h4 href="./search"><a href="/search" style="color: white;">search</a></h4> -->
 
-    <!-- <ion-searchbar
-      [(ngModel)]="myInput"
-      [showCancelButton]="shouldShowCancel"
-      (ionInput)="onInput($event)"
-      (ionCancel)="onCancel($event)">
-      
-</ion-searchbar> -->
-  </div>
+  <ion-button (click)="logout()" shape="round" color="dark" style="width: 20%;"><ion-icon name="log-out-outline"></ion-icon></ion-button>
+  <br><br>
   
 </ion-content>

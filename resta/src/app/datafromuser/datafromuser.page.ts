@@ -69,6 +69,7 @@ export class DatafromuserPage implements OnInit {
         {
           text:"Apply", handler:(res) => {
             console.log(res.promo);
+            //this.simon();
           }
         },
         {
@@ -107,5 +108,29 @@ export class DatafromuserPage implements OnInit {
     this.disableButton = true;
     }
    
+    simon(){
+    
+      let shareData = {
+        title:'BCK',
+        text:'Learn web development',
+        url:'https://banelekhumalo.github.io',
+      }
+    
+    
+      const btn = document.querySelector('button');
+      const resultPara = document.querySelector('.result');
+    
+      btn.addEventListener('click',  () => {
+        
+             navigator.share(shareData)
+             .then( () =>
+             resultPara.textContent = 'BCK shared successfully'
+             )
+            .catch((e) => 
+            resultPara.textContent = 'Error' + e
+            )  
+      });
+    }
+
 
 }

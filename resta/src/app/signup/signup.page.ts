@@ -114,8 +114,8 @@ export class SignupPage implements OnInit {
                   return firebase.firestore().collection('users').doc(res.user.uid).set({
                      name: this.userForm.value.name,
                      lname: this.userForm.value.lname,
-                    email:this.userForm.value.gender,
-                    gender:this.userForm.value.email,
+                    email:this.userForm.value.email,
+                    gender:this.userForm.value.gender,
                     password: this.userForm.value.password,
                     cellphone: this.userForm.value.cellphone
                   }).then(() => {

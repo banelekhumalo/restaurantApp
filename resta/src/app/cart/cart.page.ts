@@ -61,7 +61,10 @@ export class CartPage implements OnInit {
   get date() {
     return this.tableForm.get('date');
   }
-
+//resEmail
+get resEmail() {
+  return this.tableForm.get('resEmail');
+}
 
   public errorMessages = {
     resname: [
@@ -95,6 +98,8 @@ export class CartPage implements OnInit {
       noOfPeople: ['', [Validators.required, Validators.maxLength(100)]],
       time: ['', [Validators.required, Validators.maxLength(100)]],
       date: ['', [Validators.required, Validators.maxLength(10)]],
+      resEmail: ['', [Validators.required, Validators.maxLength(50)]],
+
     });
     }
 
@@ -142,28 +147,24 @@ export class CartPage implements OnInit {
           {
             text: 'Okay',
             handler: () => {
-              //var user = firebase.auth().currentUser;
+              
               var user = firebase.auth().currentUser;
               this.userId = user.uid;
-              //this.orderId = user.uid;
-              //console.log('userId booking: ', this.orderId);
               console.log('userId booking: ', this.userId);
               console.log('UID: ', this.uid);
-              //this.orderId = this.uid;
-              //console.log('Owner ID booking: ', this.orderId)
+            
               this.ownerId = this.uid
               console.log('Owner IDD: ', this.ownerId)
               console.log('Owner : ', this.id)
-              // this.isSubmitted = true;
-              // if(this.bookingForm.valid){
-                // this.searchService.reserve()
+              
                 firebase.firestore().collection('restaurants').doc(this.uid).collection('bookings').add({
                   userId: this.userId,
                   ownerId: this.uid,
                   resname: this.tableForm.value.resname,
                   noOfPeople: this.tableForm.value.noOfPeople,
                   date: this.tableForm.value.date,
-                  time: this.tableForm.value.time
+                  time: this.tableForm.value.time,
+                  resEmail: this.tableForm.value.resEmail,
                   
                 }).then(() => {
                   this.router.navigateByUrl('/search');

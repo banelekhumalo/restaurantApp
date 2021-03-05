@@ -177,6 +177,9 @@ export class SearchPage implements OnInit {
   // initializaJSONData(){
   // }
 
- 
+  back()
+  {
+    this.router.navigateByUrl('/login')
+  }
 
 }

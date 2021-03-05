@@ -16,7 +16,7 @@ export class SearchService {
 
   private data =[
     {
-      category:'Top rated restaurant slides',
+      category:'Swipe left and right to see top rated Restaurants!',
       expanded: true,
       products:[
         {id:1, resname:'K-Food',location:'Pretoria',ratings:'5', image:'https://images.pexels.com/photos/9315/menu-restaurant-france-eating-9315.jpg?auto=compress&cs=tinysrgb&h=650&w=940'},

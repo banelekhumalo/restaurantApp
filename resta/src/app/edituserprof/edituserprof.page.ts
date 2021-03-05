@@ -130,6 +130,9 @@ export class EdituserprofPage implements OnInit {
     });
 
   }
-
+  back2()
+  {
+    this.router.navigateByUrl('/user-profile')
+  }
 
 }

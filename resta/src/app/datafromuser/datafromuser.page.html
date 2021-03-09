@@ -1,13 +1,15 @@
-<ion-header>
-  <ion-toolbar color="dark">
-    <ion-title>History</ion-title>
-    <ion-button color="dark" href="./loginr">
-      <ion-icon name="close" slot="icon-only"></ion-icon>
-    </ion-button>
-  </ion-toolbar>
-</ion-header>
+
+<ion-content>
+
+  <div class="content"
+  style=" width:100%;background:#53bdc4;height: 80px;border-bottom-left-radius: 200px;border-bottom-right-radius:200px ;">
+  <ion-icon name="caret-back-outline"  (click)="back()"
+    style="margin-left: 20px; width: 25px; height: 25px;margin-bottom: -20px;"></ion-icon>
+  <h4 style="justify-content: center; display: flex;color: white;">View Booking</h4>
+</div>
+<br>
 <section>
-  <ion-card color="success">
+  <ion-card style="background: #53bdc4;">
     <h2>Booking History</h2>
   </ion-card>
   <br>
@@ -61,6 +63,6 @@
   </ion-list>
 </section>
 
-<ion-content>
+
 
 </ion-content>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-restaprofile',
@@ -9,7 +10,7 @@ export class RestaprofilePage implements OnInit {
   title = 'khumalo2';
   images: any =[];
   allfiles: any =[];
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
@@ -86,6 +87,10 @@ export class RestaprofilePage implements OnInit {
   save()
   {
     console.log(this.allfiles);
+  }
+
+  back(){
+    this.router.navigateByUrl('/loginr')
   }
 
 }

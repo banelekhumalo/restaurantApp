@@ -55,4 +55,8 @@ export class RestasetingsPage implements OnInit {
          toast.present();
       }//end of toast
 
+      back(){
+        this.router.navigateByUrl('/loginr')
+      }
+
 }

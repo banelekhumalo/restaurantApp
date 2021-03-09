@@ -5,6 +5,7 @@ import { CalendarComponent } from 'ionic2-calendar';
 import { AppointmentsModalPage } from '../appointments-modal/appointments-modal.page';
 import { registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
+import { Router } from '@angular/router';
 registerLocaleData(localeDe);
 
 @Component({
@@ -16,6 +17,9 @@ export class AppointmentsPage implements OnInit {
   eventSource = [];
   viewTitle : string;
 
+  
+ 
+
   calendar ={
     mode: 'month',
     currentDate : new Date()
@@ -25,7 +29,8 @@ export class AppointmentsPage implements OnInit {
 
   @ViewChild (CalendarComponent) myCal: CalendarComponent;
 
-  constructor( private modalCtrl: ModalController) { }
+  constructor( private modalCtrl: ModalController,
+    private router: Router) { }
 
 
   ngOnInit() {
@@ -137,6 +142,12 @@ export class AppointmentsPage implements OnInit {
       
     }
 
+    back2(){
+      this.router.navigateByUrl('/loginr');
+    }
 
+
+
+    
 
 }

@@ -131,6 +131,9 @@ export class DatafromuserPage implements OnInit {
             )  
       });
     }
+    back(){
+      this.router.navigateByUrl('/loginr')
+    }
 
 
 }

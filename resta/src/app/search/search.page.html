@@ -5,29 +5,28 @@
     style=" width:100%;background:#53bdc4;height: 80px;border-bottom-left-radius: 200px;border-bottom-right-radius:200px ;">
     <ion-icon name="caret-back-outline" (click)="back()"
       style="margin-left: 20px; width: 25px; height: 25px;margin-bottom: -20px;"></ion-icon>
-    <h4 style="justify-content: center; display: flex;color: white;">Profile</h4>
+    <h4 style="justify-content: center; display: flex;color: white;">Search</h4>
   </div>
   <br>
 
     <!-- beginning of search -->
   <!-- <ion-button #search color="dark" href="./login"><ion-icon name="caret-back-outline"></ion-icon></ion-button> -->
-  <ion-badge color="dark"  style="width: 50px;height:45px;margin-top:3px;" *ngIf="cart.length > 0">
+  <!-- <ion-badge color="dark"  style="width: 50px;height:45px;margin-top:3px;" *ngIf="cart.length > 0">
     
     <ion-icon name="fast-food-outline" style="width: 30px;height:30px; margin-right: 40px;">
-    </ion-icon></ion-badge>
+    </ion-icon></ion-badge> -->
 
 
   <!-- {{ cart.length }} > -->
+ <div style="width: 100%;height: 100%; background: rgb(250, 247, 247); ">
   <ion-searchbar
   debounce="500"
    (ionChange)="_ionChange($event)"
   ></ion-searchbar>
 
 <br>
-
     <!-- slider -->
-   
-    
+
       <div *ngFor="let cat of items " class="category-block" style="background:#53bec5; border-bottom-right-radius: 50px;border-bottom-left-radius: 50px;">
         <ion-row no-padding class="category-banner">
           <ion-col text-left button tappable (click)="cat.expanded = !cat.expanded" align-self-center>
@@ -57,9 +56,6 @@
   
     </div>
 <br>
-  
-
-
 
   <ion-grid  style="background:white;border-top-left-radius: 50px;border-top-right-radius: 50px; border-bottom-left-radius: 50px;border-bottom-right-radius: 50px;">
     <ion-row>
@@ -80,26 +76,6 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-
-
-
-<!-- restaname: 
-Profilepic: 
-location:this.
-email:
-regNo: -->
-
-
-
-
-<!-- <ion-infinite-scroll threshold (ionInfinite)="loadData($event)">
-
-</ion-infinite-scroll> -->
-
-
-
-
-<!-- <ion-button [routerLink]="'/booking-a-table/'+restaurants?.ownerId">Book a table</ion-button> -->
-
+ </div>
 
 </ion-content>

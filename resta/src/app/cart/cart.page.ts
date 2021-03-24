@@ -182,6 +182,9 @@ get resEmail() {
       return await alert.present();
     }
 
+    back(){
+      this.router.navigateByUrl('/search')
+    }
 
     
 

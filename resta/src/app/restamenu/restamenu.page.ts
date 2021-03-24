@@ -82,7 +82,9 @@ export class RestamenuPage implements OnInit {
    console.log(result.data.values);
   
     }
-
+    back(){
+      this.router.navigateByUrl('/loginr')
+    }
 
     fileuploads(event)
     {

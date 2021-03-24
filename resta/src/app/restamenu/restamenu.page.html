@@ -1,27 +1,23 @@
-<ion-header>
-  <ion-toolbar color="dark">
-    <ion-title>Menu</ion-title>
-    <ion-button color="dark" href="./loginr">
-      <ion-icon  name="close" slot="icon-only"></ion-icon>
-    </ion-button>
-    <ion-buttons slot="end">
-      <ion-button (click)="presentAlertPrompt()">
-        <ion-icon  name="add" slot="icon-only"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content style="--background:#53bec5; border-bottom-right-radius: 30px;">
-    <div style="width: 100%; height: 20%;background:white; justify-content: center;">
+<ion-content style="--background:#53bec5;">
+  <div class="content"
+  style=" width:100%;background:#53bdc4;height: 80px;border-bottom-left-radius: 200px;border-bottom-right-radius:200px ;">
+  <ion-icon name="caret-back-outline"  (click)="back()"
+    style="margin-left: 20px; width: 25px; height: 25px;margin-bottom: -20px;"></ion-icon>
+  <h4 style="justify-content: center; display: flex;color: white;">Menu</h4>
+  <ion-button  style="margin-left: 75%;color: black; --background: white;" (click)="presentAlertPrompt()">ADD</ion-button>
+</div>
+  
+    <div style="width: 100%; height: 20%;background:white; justify-content: center;
+    border-top-right-radius: 400px;border-bottom-left-radius: 400px;">
       <img src="./assets/logo.png" style="width: 140px; height: 140px;margin-left:30%;">
     </div>
-<p style="margin-left: 5px;">Please press the add icon to update staff details</p>
+<!-- <p style="margin-left: 5px; border-top-right-radius:25px">Please press the add icon to update staff details</p> -->
 <br>
 <div class="row" style="margin-left: 5px;">
   <div class="col-md-12">
       <div class="form-group">
-        <label>Please Upload dishes that are available</label>
+        <label style="font-size: medium;">Please Upload dishes that are available</label>
           <input type="file" (change)="fileuploads($event)" multiple class="form-control" style="height: 100%;" accept="image/*">
       </div>
   </div>
